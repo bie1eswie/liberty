@@ -1,0 +1,137 @@
+﻿@import "_color-palette";
+@import "_font-face";
+
+:root {
+    --main-white-color: white;
+    --main-black-color: black;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.static {
+    position: static;
+}
+
+.cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.owl-carousel .owl-slide {
+    position: relative;
+    height: 400px;
+    background-color: lightgray;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+    background-blend-mode: multiply;
+    background-image: linear-gradient(to left, rgba(0, 43, 153, 0) 68%, rgba(0, 0, 0, 0.8));
+}
+
+.owl-carousel .owl-slide-animated {
+    transform: translateX(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.05s;
+}
+
+.owl-carousel .owl-slide-animated.is-transitioned {
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s;
+}
+
+.owl-carousel .owl-slide-title.is-transitioned {
+    transition-delay: 0.2s;
+}
+
+.owl-carousel .owl-slide-title, .owl-slide-subtitle{
+
+}
+
+.owl-carousel .owl-slide-title {
+    font-family: NotoSans-Bold;
+    font-size: 40px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.7;
+    letter-spacing: normal;
+    color: $color-white;
+}
+
+.owl-carousel .owl-slide-subtitle {
+    font-family: 'Noto Sans';
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.69;
+    letter-spacing: normal;
+    color: $color-white;
+}
+
+.owl-carousel .owl-slide-subtitle.is-transitioned {
+    transition-delay: 0.35s;
+}
+
+.owl-carousel .owl-slide-cta.is-transitioned {
+    transition-delay: 0.5s;
+}
+
+.owl-carousel .owl-dots,
+.owl-carousel .owl-nav {
+    position: absolute;
+}
+
+.owl-carousel .owl-dots .owl-dot,
+.owl-carousel .owl-nav [class*="owl-"]:focus {
+    outline: none;
+}
+
+.owl-carousel .owl-dots .owl-dot span {
+    background: transparent;
+    border: 1px solid var(--main-black-color);
+    transition: all 0.2s ease;
+}
+
+.owl-carousel .owl-dots .owl-dot:hover span,
+.owl-carousel .owl-dots .owl-dot.active span {
+    background: var(--main-black-color);
+}
+
+.owl-carousel .owl-nav {
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+.owl-carousel .owl-nav svg {
+    opacity: 0.3;
+    transition: opacity 0.3s;
+}
+
+.owl-carousel .owl-nav button:hover svg {
+    opacity: 1;
+}
+
+.owl-carousel .owl-nav [class*="owl-"]:hover {
+    background: transparent;
+}
+
+
+@media screen and (max-width: 575px) {
+    .owl-carousel .owl-nav {
+        top: 5%;
+    }
+
+    .owl-carousel .owl-nav svg {
+        width: 24px;
+        height: 24px;
+    }
+}
